@@ -65,11 +65,11 @@ while True:
 
 
         name = list(tracker)[i]
-        flag = tracker[list(tracker)[i]]["flag"]
-        url = tracker[list(tracker)[i]]["url"]
+        flag = tracker[name]["flag"]
+        url = tracker[name]["url"]
         req = requests.get(url)
         txt = req.text
-        msg = tracker[list(tracker)[i]]["msg"]
+        msg = tracker[name]["msg"]
 
         if req.status_code == 200:
             
@@ -92,5 +92,6 @@ while True:
 
     webhook.send(content="---------------------------------------------------")
     print("---------------------------------------------------")
+    print()
 
-    time.sleep(3600)
+    time.sleep(36000)
